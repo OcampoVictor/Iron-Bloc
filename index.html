@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es-MX" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iron Bloc | México</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Crect width='500' height='500' fill='%230047FF'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='80' fill='white' letter-spacing='4'%3EIRON BLOC%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0047FF",
+              "accent-blue": "#0033CC",
+              "background-light": "#f8f6f6",
+              "background-dark": "#111827",
+              "neutral-dark": "#0f172a",
+              "neutral-gray": "#8c8c8c",
+              concrete: "#e5e5e5",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            animation: {
+              marquee: "marquee 20s linear infinite",
+              'reveal': 'reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards',
+              'fade-in-up': 'fadeInUp 1s ease-out forwards',
+              'zoom-slow': 'zoomSlow 30s ease-in-out infinite alternate',
+              'scan': 'scan 4s linear infinite',
+              'titan-drop': 'titanDrop 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+              'plasma-ignition': 'plasmaIgnition 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+              'shockwave': 'shockwave 2s infinite',
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              reveal: {
+                "0%": { transform: "translateY(110%)" },
+                "100%": { transform: "translateY(0)" },
+              },
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              zoomSlow: {
+                "0%": { transform: "scale(1)" },
+                "100%": { transform: "scale(1.15)" },
+              },
+              scan: {
+                "0%": { transform: "translateY(-100%)" },
+                "100%": { transform: "translateY(100%)" },
+              },
+              titanDrop: {
+                "0%": { 
+                  opacity: "0", 
+                  transform: "scale(2)", 
+                  letterSpacing: "1em",
+                  filter: "blur(12px)"
+                },
+                "100%": { 
+                  opacity: "1", 
+                  transform: "scale(1)", 
+                  letterSpacing: "-0.05em",
+                  filter: "blur(0)"
+                }
+              },
+              plasmaIgnition: {
+                "0%": { 
+                  backgroundPosition: "200% center",
+                  color: "transparent",
+                  webkitTextStroke: "1px rgba(255,255,255,0.3)"
+                },
+                "20%": {
+                  color: "transparent",
+                   webkitTextStroke: "1px rgba(255,255,255,0.5)"
+                },
+                "50%": {
+                   webkitTextStroke: "0px transparent"
+                },
+                "100%": { 
+                  backgroundPosition: "0% center",
+                  color: "#0047FF", /* primary */
+                  webkitTextStroke: "0px transparent"
+                }
+              },
+              shockwave: {
+                "0%": {
+                  transform: "scale(1)",
+                  boxShadow: "0 0 0 0 rgba(37, 211, 102, 0.7)"
+                },
+                "70%": {
+                  transform: "scale(1)",
+                  boxShadow: "0 0 0 20px rgba(37, 211, 102, 0)"
+                },
+                "100%": {
+                  transform: "scale(1)",
+                  boxShadow: "0 0 0 0 rgba(37, 211, 102, 0)"
+                }
+              }
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .text-outline {
+        -webkit-text-stroke: 1px white;
+        color: transparent;
+      }
+      .text-outline-blue {
+        -webkit-text-stroke: 1px #0047ff;
+        color: transparent;
+      }
+      .mix-blend-difference {
+        mix-blend-mode: difference;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Clase especial para el efecto de ignición */
+      .plasma-text {
+        background: linear-gradient(
+          90deg, 
+          #0047FF 0%, 
+          #0047FF 45%, 
+          #ffffff 50%, 
+          #0047FF 55%, 
+          #0047FF 100%
+        );
+        background-size: 250% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@18.2.0,react-dom@18.2.0",
+    "@remix-run/router": "https://esm.sh/@remix-run/router@1.15.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 font-display overflow-x-hidden selection:bg-primary selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
